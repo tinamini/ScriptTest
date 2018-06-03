@@ -10,6 +10,9 @@ public class Test : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+		// 課題：配列を宣言して出力
+		this.DisplayIntArray();
+
 		var lastBoss = new Boss();
 
 		// 攻撃
@@ -25,6 +28,34 @@ public class Test : MonoBehaviour
 	{
 
 	}
+
+	#region Private Method
+	/// <summary>
+	/// 配列を表示する
+	/// </summary>
+	/// <remarks>
+	/// 配列を順番・逆番に表示する
+	/// </remarks>
+	private void DisplayIntArray()
+	{
+		const int num = 5;
+		var array = new int[num] { 10, 20, 30, 40, 50 };
+
+		// 順番
+		Debug.Log("順番に配列を表示");
+		for (var i = 0; i < num; i++)
+		{
+			Debug.Log(array[i]);
+		}
+
+		// 逆番
+		Debug.Log("逆番に配列を表示");
+		for (var i = num - 1; i >= 0; i--)
+		{
+			Debug.Log(array[i]);
+		}
+	}
+	#endregion
 }
 #endregion
 
