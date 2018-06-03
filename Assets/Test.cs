@@ -17,6 +17,7 @@ public class Test : MonoBehaviour
 
 		// 攻撃
 		lastBoss.Attack();
+
 		// 防御
 		lastBoss.Defence(3);
 
@@ -99,7 +100,7 @@ public class Boss
 	}
 
 	/// <summary>
-	/// 防御する。
+	/// 防御する
 	/// </summary>
 	/// <param name="damage">ダメージ</param>
 	public void Defence(int damage)
