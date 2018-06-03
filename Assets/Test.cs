@@ -19,6 +19,13 @@ public class Test : MonoBehaviour
 		lastBoss.Attack();
 		// 防御
 		lastBoss.Defence(3);
+
+		// 魔法攻撃
+		for (var i = 0; i < 15; i++)
+		{
+			Debug.Log(i + 1 + "回目の魔法攻撃。");
+			lastBoss.Magic(5);
+		}
 	}
 
 	/// <summary>
@@ -75,6 +82,11 @@ public class Boss
 	/// 攻撃力
 	/// </summary>
 	private int power = 25;
+
+	/// <summary>
+	/// 魔力
+	/// </summary>
+	private int mp = 53;
 	#endregion
 
 	#region Public Method
@@ -94,6 +106,23 @@ public class Boss
 	{
 		this.hp -= damage;
 		Debug.Log(damage + "のダメージを受けた");
+	}
+
+	/// <summary>
+	/// 魔法攻撃をする
+	/// </summary>
+	/// <param name="needMp">必要魔力</param>
+	public void Magic(int needMp)
+	{
+		if (this.mp >= needMp)
+		{
+			this.mp -= needMp;
+			Debug.Log("魔法攻撃をした。残りMPは" + this.mp + "。");
+		}
+		else
+		{
+			Debug.Log("MPが足りないため魔法が使えない。");
+		}
 	}
 	#endregion
 }
